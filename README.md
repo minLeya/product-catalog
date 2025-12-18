@@ -1,16 +1,54 @@
-# React + Vite
+# Test task. Creating a product catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+### The challenge
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Create a small one-page application that displays a list of products and allows to filter them by name and view detailed information about the selected product in a modal window.  
+What should work:  
+• The main page displays product cards (image, name, price).  
+• Search is a text field that filters products by name on the fly.  
+• Modal window - when clicking on the card, a pop-up window opens with full information about the product (large image, description, price, "Buy" button). The window is closed by pressing the "X" button, clicking outside the window, and pressing Esc.  
+• API request - product data is taken from a simulated endpoint. Example of the structure:  
 
-## Expanding the ESLint configuration
+```json
+[
+    {
+        "id": 1,
+        "title": "Smart watch X100",
+        "price": 7490,
+        "category": "Gadgets",
+        "image": " https://example.com/img/1.jpg ",
+        "description": "Waterproof, GPS, 7-day battery"
+    }
+]
+```  
+• Adaptability - The layout should look correct on mobile (< 480 pixels), tablets (< 768 pixels), and desktops.  
+• Git - all the code is in the repository, at least 3 commits.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Screenshot
+
+![screen-1](src/assets/images/image.png)
+![screen-2](src/assets/images/image-1.png)
+![screen-3](src/assets/images/image-2.png)
+![screen-4](src/assets/images/image-3.png)
+
+### Links
+
+- Live Site URL: [catalog]()
+
+## My process
+
+### Built with
+
+- React
+- Tailwind CSS
