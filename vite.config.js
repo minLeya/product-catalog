@@ -8,5 +8,6 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/product-catalog/'
+  base: '/product-catalog/',
+  publicDir: 'public',
 })
