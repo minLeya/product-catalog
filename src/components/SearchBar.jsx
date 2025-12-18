@@ -1,19 +1,23 @@
 import searchIcon from "../assets/images/icon-search.svg";
-import { useState } from "react";
+import { useState} from "react";
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState("");
 
-  const handleSearch = () => {
-    if (query.trim()) {
-      onSearch?.(query.trim());
-    }
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+    onSearch?.(value);
   };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleSearch();
+      onSearch?.(query);
     }
+  };
+
+  const handleButtonClick = () => {
+    onSearch?.(query);
   };
 
   return (
@@ -26,21 +30,20 @@ function SearchBar({ onSearch }) {
         />
         <input 
           type="text" 
-          placeholder="Write here..." 
+          placeholder="Найти товар..." 
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleChange}
           onKeyPress={handleKeyPress}
-          className="w-full pl-12 pr-4 py-3 bg-white border-2 border-gray-700 rounded-xl focus:outline-none focus:border-blue-500  text-gray-800 placeholder-gray-500 shadow-sm"
+          className="w-full pl-12 pr-4 py-3 bg-white border-2 border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-500 shadow-sm"
         />
       </div>
 
       <button 
-        onClick={handleSearch}
-        disabled={!query.trim()}
-        className="px-6 py-3 bg-blue-800 hover:bg-blue-700 disabled:bg-gray-300 dark:disabled:bg-gray-700 text-white font-medium rounded-xl transition-colors duration-200"
-        aria-label="Search"
+        onClick={handleButtonClick}
+        className="px-6 py-3 bg-blue-800 hover:bg-blue-700 text-white font-medium rounded-xl transition-colors duration-200"
+        aria-label="Поиск"
       >
-        Search
+        Поиск
       </button>
     </div>
   );

@@ -1,6 +1,6 @@
 import ProductCard from './ProductCard';
 
-function ProductList({ products }) {
+const ProductList = ({ products, onProductClick }) => {
   if (!products || products.length === 0) {
     return (
       <div className="text-center py-12">
@@ -15,6 +15,7 @@ function ProductList({ products }) {
         <ProductCard
           key={product.id}
           product={product}
+          onClick={() => onProductClick(product)}
         />
       ))}
     </div>
